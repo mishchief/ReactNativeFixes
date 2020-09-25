@@ -19,3 +19,30 @@ React native won't build and is throwing this error. Fear not it can be fixed.
 * Glog is configured and the required config.h header file is created for Xcode to find
 
 After running the above you should be able to build the app.
+
+### **error while installing flipper-glog pod**
+
+#### Problem 
+
+While running `pod install` on MyProject/ios you see this:
+
+```
+/<user>/Library/Caches/CocoaPods/Pods/Release/Flipper-Glog/0.3.6-1dfd6/missing: Unknown `--is-lightweight' option
+Try `/<user>/Library/Caches/CocoaPods/Pods/Release/Flipper-Glog/0.3.6-1dfd6/missing --help' for more information
+configure: WARNING: 'missing' script is too old or missing
+configure: error: in `/<user>/Library/Caches/CocoaPods/Pods/Release/Flipper-Glog/0.3.6-1dfd6':
+configure: error: C compiler cannot create executables
+See `config.log' for more details
+```
+
+#### Fix
+
+**Solution 1:**
+Run `sudo xcode-select --switch /Applications/Xcode.app`
+And then `pod install`
+
+**Solution 2:**
+Run `git config --global core.autocrlf false`
+And then `pod install`
+
+
